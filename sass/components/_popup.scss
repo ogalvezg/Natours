@@ -10,6 +10,7 @@
     visibility: hidden;
     transition: all .3s;
 
+
     @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
@@ -28,11 +29,21 @@
         opacity: 0;
         transform: translate(-50%, -50%) scale(.25);
         transition: all .5s .2s;
+
+        @include respond(phone) {
+            width: 85%;
+            display: block;
+        }
     }
 
     &__left {
         width: 33.333333%;
         display: table-cell;
+
+        @include respond(phone) {
+            width: 100%;
+            display: block;
+        }
     }
 
     &__right {
@@ -40,11 +51,24 @@
         display: table-cell;
         vertical-align: middle;
         padding: 3rem 5rem;
+
+        @include respond(phone) {
+            width: 100%;
+            display: block;
+            padding: 2rem 3rem;
+        }
     }
 
     &__img {
         display: block;
         width: 100%;
+
+        @include respond(phone) {
+            margin-top: 4rem;
+            width: 50%;
+            display: inline-block;
+            float: left;
+        }
     }
 
     &__text {
@@ -63,6 +87,11 @@
         -ms-hyphens: auto;
         -webkit-hyphens: auto;
         hyphens: auto;
+
+        @include respond(phone) {
+            margin-bottom: 2rem;
+            column-count: 1;
+        }
     }
 
     //Open states
@@ -88,6 +117,11 @@
             display: inline-block;
             transition: all .2s;
             line-height: 1;
+
+            @include respond(phone) {
+                top: .5rem;
+                right: .5rem;
+            }
         }
 
         &:hover {
